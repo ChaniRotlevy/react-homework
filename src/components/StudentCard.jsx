@@ -1,4 +1,5 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 
 function StudentCard({ student }) {
   return (
@@ -9,6 +10,7 @@ function StudentCard({ student }) {
       <p>סטטוס: {student.active ? 'פעילה' : 'לא פעילה'}</p>
       {student.grade >= 90 && <div className="badge excel">מצטיינת</div>}
       {student.grade < 60 && <div className="badge improve">נדרש שיפור</div>}
+      <Link to={`/students/${student.id}`}>לצפייה בפרטים</Link>
     </div>
   );
 }
