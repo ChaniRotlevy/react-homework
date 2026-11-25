@@ -5,6 +5,8 @@ import Dashboard from './pages/Dashboard';
 import Students from './pages/Students';
 import StudentDetails from './pages/StudentDetails';
 import ExcellentStudents from './pages/ExcellentStudents';
+import Users from './pages/Users';
+import UserProfile from './pages/UserProfile';
 import NotFound from './pages/NotFound';
 import './App.css';
 
@@ -17,6 +19,8 @@ function App() {
           <Route path="students" element={<Students />} />
           <Route path="students/:id" element={<StudentDetails />} />
           <Route path="excellent" element={<ExcellentStudents />} />
+          <Route path="users" element={<Users />} />
+          <Route path="users/:id" element={<UserProfile />} />
           <Route path="*" element={<NotFound />} />
         </Route>
       </Routes>

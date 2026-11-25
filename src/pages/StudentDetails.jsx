@@ -1,19 +1,14 @@
-import React, { useState, useEffect } from 'react';
+import React from 'react';
 import { useParams, Link } from 'react-router-dom';
 import { initialStudents } from '../data/students';
 
 function StudentDetails() {
   const { id } = useParams();
-  const [student, setStudent] = useState(null);
-
-  useEffect(() => {
-    const foundStudent = initialStudents.find(s => s.id === Number(id));
-    setStudent(foundStudent);
-  }, [id]);
+  const student = initialStudents.find(s => s.id === Number(id));
 
   if (!student) {
     return (
-      <div>
+      <div className="not-found">
         <p>תלמידה לא נמצאה.</p>
         <Link to="/students">חזרה לרשימה</Link>
       </div>
